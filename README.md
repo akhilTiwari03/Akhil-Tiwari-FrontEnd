@@ -16,7 +16,7 @@ The isSelected prop in the SingleListItem component is not being passed the corr
 
 The memoization of the SingleListItem and List components may not be necessary, depending on the use case and performance requirements of the application. It is possible that the memoization could actually harm performance if the components are being re-rendered frequently.
 
-#Question 3: Please fix, optimize, and/or modify the component as much as you think is necessary. 
+# Question 3: Please fix, optimize, and/or modify the component as much as you think is necessary. 
 Ans: It is being fixed and the corrected code is being attached in the repository.
 
-# Thankyou
+#                                                                            Thankyou
