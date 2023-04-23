@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Questions:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Question 1: Explain what the simple List component does.
+Ans : The code represents a List component in React that displays a vertical list of items. Each item is represented by a SingleListItem component that displays text and can be selected by the user. When an item is selected, its background color changes to green. The List component manages the state of the selected item and passes it down to the SingleListItem component as a prop. It also resets the selected item when the list of items changes. The code also includes some PropTypes validation for the props passed to the components.
 
-## Available Scripts
+# Question 2: What problems / warnings are there with code?
+Ans: There are a few issues with the code:
 
-In the project directory, you can run:
+The setSelectedIndex hook is being called incorrectly in the List component. It should be const [selectedIndex, setSelectedIndex] = useState(); instead of const [setSelectedIndex, selectedIndex] = useState();.
 
-### `npm start`
+The PropTypes validation for the items prop in the List component is incorrect. It should be items: PropTypes.arrayOf(PropTypes.shape({ text: PropTypes.string.isRequired })) instead of items: PropTypes.array(PropTypes.shapeOf({ text: PropTypes.string.isRequired })).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The onClickHandler function in the SingleListItem component is not being passed the index correctly. It should be onClick={() => onClickHandler(index)} instead of onClick={onClickHandler(index)}.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The isSelected prop in the SingleListItem component is not being passed the correct value. It should be isSelected={selectedIndex === index} instead of isSelected={selectedIndex}.
 
-### `npm test`
+The memoization of the SingleListItem and List components may not be necessary, depending on the use case and performance requirements of the application. It is possible that the memoization could actually harm performance if the components are being re-rendered frequently.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#Question 3: Please fix, optimize, and/or modify the component as much as you think is necessary. 
+Ans: It is being fixed and the corrected code is being attached in the repository.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Thankyou
