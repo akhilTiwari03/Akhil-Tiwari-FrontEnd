@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import List from './Components/List';
 import './App.css';
 
-function App() {
+const App = () => {
+  const items = [
+    { text: 'Akhil Tiwari' },
+    { text: '12013811' },
+    { text: 'Lovely Professional University' },
+  ];
+
+  console.log("Items:", items);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <List align="center" items={items} />
     </div>
   );
-}
-
+};
 export default App;
+
