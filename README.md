@@ -1,6 +1,6 @@
 # Questions:
 
-#Question 1: Explain what the simple List component does.
+# Question 1: Explain what the simple List component does.
 Ans : The code represents a List component in React that displays a vertical list of items. Each item is represented by a SingleListItem component that displays text and can be selected by the user. When an item is selected, its background color changes to green. The List component manages the state of the selected item and passes it down to the SingleListItem component as a prop. It also resets the selected item when the list of items changes. The code also includes some PropTypes validation for the props passed to the components.
 
 # Question 2: What problems / warnings are there with code?
